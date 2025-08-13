@@ -1,2 +1,2 @@
-# https-handmade-work.ru-
+# https-handmade-work.ru.
 Сайт для продажи платков
