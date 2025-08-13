@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EL - Вязаные изделия</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="static/files/favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="static/files/favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="static/files/favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="static/files/favicon_io/site.webmanifest">
+    
+    <style>
+        /* Основные стили */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fff0f5;
+            /* Нежно-розовый фон */
+            min-height: 100vh;
+        }
+
+        /* Навигационная панель */
+        .navbar {
+            background-color: #ff69b4;
+            /* Розовый цвет фона */
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-title {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .navbar-link {
+            color: white;
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        .navbar-link:hover {
+            background-color: #ff1493;
+            /* Темно-розовый при наведении */
+        }
+
+        /* Стили для карточек товаров */
+        .product-card {
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 6px 12px rgba(255, 105, 180, 0.2);
+            transition: all 0.3s ease;
+            border: none;
+            overflow: hidden;
+            margin-bottom: 30px;
+            height: 100%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(255, 105, 180, 0.3);
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .carousel-inner {
+            border-radius: 15px 15px 0 0;
+        }
+
+        .list-group-item {
+            flex-grow: 1;
+            background-color: rgba(255, 240, 245, 0.7);
+        }
+
+        .row-spacing {
+            margin-bottom: 40px;
+        }
+
+        /* Стили для кнопок */
+        .btn-primary {
+            background-color: #ff69b4;
+            border-color: #ff69b4;
+            border-radius: 50px;
+            padding: 8px 20px;
+            font-weight: 500;
+        }
+
+        .btn-primary:hover {
+            background-color: #ff1493;
+            border-color: #ff1493;
+        }
+
+        /* Стили для заголовков */
+        .card-title {
+            color: #d81b60;
+            font-weight: 600;
+        }
+
+        .card-text {
+            color: #e91e63;
+            font-weight: 500;
+        }
+
+        /* Контейнер */
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .product-card {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="navbar-title">Магазин вязаных изделий</div>
+            <a href="#" class="navbar-link">Главная</a>
+        </nav>
+    </header>
+
+    <div class="container mt-5">
+        <!-- Первый ряд из 3 карточек -->
+        <div class="row justify-content-between row-spacing">
+            <!-- Карточка 1 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body">
+                        <div id="productCarousel1" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#productCarousel1" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#productCarousel1" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#productCarousel1" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://40.img.avito.st/image/1/1.LNv-Era4gDLIu0I3qg4ru5GzgjRAswI6iLaCME67iDhI.ZzgivEyY_rXXCMU-IB_UVRjEfUkXk9qfk8euhINSEaY"
+                                        class="d-block w-100" alt="Вязаные цветы">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://70.img.avito.st/image/1/1.1Fquq7a4eLOYArq2ivSDOsEKerUQCvq72A96sR4CcLkY.BrrMxBBecAawOm4FmRHCDl0A03zeZZ6SfZezR81YnBI"
+                                        class="d-block w-100" alt="Вязаные цветы">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://40.img.avito.st/image/1/1.LNv-Era4gDLIu0I3qg4ru5GzgjRAswI6iLaCME67iDhI.ZzgivEyY_rXXCMU-IB_UVRjEfUkXk9qfk8euhINSEaY"
+                                        class="d-block w-100" alt="Вязаные цветы">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel1"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel1"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <h5 class="card-title mt-3">Вязаные цветы</h5>
+                        <p class="card-text">190 рублей</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Цветочек связан из ангoра 60 и нить хлопок c чёрнoй маленькoй
+                            пайeткой.</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/vyazanye_tsvety_7537169608?slocation=621540&context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJQaFRrYWRHWjdHSGgzMldSIjt9RDrB-T8AAAA"
+                            target="_blank" class="btn btn-primary">Купить (переход на Авито)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 2 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body">
+                        <div id="productCarousel2" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#productCarousel2" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#productCarousel2" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#productCarousel2" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://10.img.avito.st/image/1/1.wSd7GLa4bc5Nsa_LdSuaNAK5b8jFue_GDbxvzMuxZcTN._xX7r-Pri8wbiFLfVblq_CTu3rJiSfT5zdgL83HberI?cqp=2.TSzMy-m0u9ojo94xoNTr4TIkcUBjMu1L_y5Z6Lr-VHA-3xfoRpsvf1jN4IBF36LEO13sxOCjYv9KRoXzpmAFvKTQ"
+                                        class="d-block w-100" alt="Платок косынка">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://90.img.avito.st/image/1/1.TbTaeba44V3s0CNYzBh1pKPY41tk2GNVrN3jX2rQ6Vds.ciFjevdZc81NeU42l4jfnyEWyMjuOnkK6npSxmwe5j4"
+                                        class="d-block w-100" alt="Платок косынка">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://70.img.avito.st/image/1/1.5TAOp7a4Sdk4DovcSPC6I3cGS9-wBsvReANL274OQdO4.wcLSK4M3USWCp1nJ_M0qYMVCfkvkRBMVESvBvOEc5u8"
+                                        class="d-block w-100" alt="Платок косынка">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel2"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel2"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <h5 class="card-title mt-3">Платок косынка</h5>
+                        <p class="card-text">600 рублей</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Косынка связана вручную спицами. Новая! Размеры указаны в
+                            объявлении.</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/platok_kosynka_7441381268?slocation=621540&context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJQaFRrYWRHWjdHSGgzMldSIjt9RDrB-T8AAAA"
+                            target="_blank" class="btn btn-primary">Купить (переход на Авито)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 3 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body">
+                        <div id="productCarousel3" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#productCarousel3" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#productCarousel3" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#productCarousel3" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://90.img.avito.st/image/1/1.-n0yE7a4VpQEupSRSmTWaVGyVJKMstScRLdUloK6Xp6E.Xf0T4toPXIxsSkCqKCLBcraKTXy7z0shAXeUxv4bXuc"
+                                        class="d-block w-100" alt="Бактус с пайетками">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://40.img.avito.st/image/1/1.hlT9g7a4Kr3LKui4_ankQp4iKLtDIqi1iycov00qIrdL.OL-92btuSVl00y6KgQxcQegcjKzz7i_zWMyTSo_08RY"
+                                        class="d-block w-100" alt="Бактус с пайетками">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://90.img.avito.st/image/1/1.-n0yE7a4VpQEupSRSmTWaVGyVJKMstScRLdUloK6Xp6E.Xf0T4toPXIxsSkCqKCLBcraKTXy7z0shAXeUxv4bXuc"
+                                        class="d-block w-100" alt="Бактус с пайетками">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel3"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel3"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <h5 class="card-title mt-3">Бактус с пайетками</h5>
+                        <p class="card-text">1220 рублей</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Бактус-косынка, связан вручную спицами. Новая! Размеры указаны в
+                            объявлении.</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/baktus_s_payetkami_7505702740?slocation=621540&context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJQaFRrYWRHWjdHSGgzMldSIjt9RDrB-T8AAAA"
+                            target="_blank" class="btn btn-primary">Купить (переход на Авито)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Второй ряд из 3 карточек -->
+        <div class="row justify-content-between">
+            <!-- Карточка 4 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body">
+                        <div id="productCarousel4" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#productCarousel4" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#productCarousel4" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#productCarousel4" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://90.img.avito.st/image/1/1.8VYxLba4Xb8HhJ-6Xw7uQlSMX7mPjN-3R4lfvYGEVbWH.tyC41YKMqSNBuXbFiqarPfFKnkQAnHP0GXQ-WddsuU4"
+                                        class="d-block w-100" alt="Косынка из мохера">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://30.img.avito.st/image/1/1.bq9LRra4wkZ97wBDGwdmxCnnwED150BOPeLARPvvykz9.6dUsIp_E0rJVwNHB-gqEUPeXm6w67bXU-ZSqNgNCnTY?cqp=2.TSzMy-m0u9ojo94xoNTr4TIkcUBjMu1L_y5Z6Lr-VHA-3xfoRpsvf1jN4IBF36LEO13sxOCjYv9KRoXzpmAFvKTQ"
+                                        class="d-block w-100" alt="Косынка из мохера">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://70.img.avito.st/image/1/1.TxEiKra44_gUgyH9MFdCekCL4f6ci2HwVI7h-pKD6_KU.4Rovaa7RNDZCDgyge8n72rRywtuFz8r6kNBFzKtCxs8"
+                                        class="d-block w-100" alt="Косынка из мохера">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel4"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel4"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <h5 class="card-title mt-3">Косынка из мохера</h5>
+                        <p class="card-text">440 рублей</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Коcынка cвязaна вpучную спицами . Новaя !-Состав пряжи:
+                            35 % кидмохер , 15 % меринос, 20% акрил, 30% п-ам.
+                            Лёгкая ,невесомая косынка.</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/kosynka_iz_mohera_7473330490?slocation=621540&context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJQaFRrYWRHWjdHSGgzMldSIjt9RDrB-T8AAAA" target="_blank" class="btn btn-primary">Купить (переход на Авито)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 5 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body">
+                        <div id="productCarousel5" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#productCarousel5" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#productCarousel5" data-bs-slide-to="1"
+                                    aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#productCarousel5" data-bs-slide-to="2"
+                                    aria-label="Slide 3"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://50.img.avito.st/image/1/1.vyvdrra4E8LrB9HHr_jvV7EPEcRjD5HKqwoRwG0HG8hr.Y-akQisjWp2kdKoD_syYFk0D_rnAN9k6FY7ibhatHGo" class="d-block w-100" alt="Косынка вязаная">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://40.img.avito.st/image/1/1.RLn_i7a46FDJIipV-45zuYcq6lZBKmpYiS_qUk8i4FpJ.E4nekZqeVq1wjEudeseQu1pemkRsykDfLWBUVx8wZyw"
+                                        class="d-block w-100" alt="Косынка вязаная">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="https://50.img.avito.st/image/1/1.JwSSALa4i-2kqUno0AhPBeqhiessoQnl5KSJ7yKpg-ck.8qe7Jtl3QPjD7NjYn5dxxCG0hxVmQnwCgq2OROneiDA"
+                                        class="d-block w-100" alt="Косынка вязаная">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel5"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel5"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <h5 class="card-title mt-3">Косынка вязаная</h5>
+                        <p class="card-text">547 рублей</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Kоcынка cвязaна вpучную спицами . Новaя ! Связано в 1 нить из 50
+                            % мериносовая шерсть, 50 % фибра.
+                            Лёгкая ,не толстая ,не колючая.</li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/kosynka_vyazanaya_7441409607?slocation=621540&context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJQaFRrYWRHWjdHSGgzMldSIjt9RDrB-T8AAAA" target="_blank" class="btn btn-primary">Купить (переход на Авито)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Карточка 6 -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card product-card h-100">
+                    <div class="card-body">
+                        <div id="productCarousel6" class="carousel slide" data-bs-ride="carousel">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#productCarousel6" data-bs-slide-to="0"
+                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="https://00.img.avito.st/image/1/1.6H-Mh7a4RJa6LoaT0JjLVewmRpAyJsae-iNGlDwuTJw6.2x0ABlUSqcwv-H6UpWawBjlB1hkU5OLONakeYM7eKQs?cqp=2.TSzMy-m0u9ojo94xoNTr4TIkcUBjMu1L_y5Z6Lr-VHA-3xfoRpsvf1jN4IBF36LEO13sxOCjYv9KRoXzpmAFvKTQ"
+                                        class="d-block w-100" alt="Вязаные косынки">
+                                </div>
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#productCarousel6"
+                                data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#productCarousel6"
+                                data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                        <h5 class="card-title mt-3">Вязаные косынки</h5>
+                        <p class="card-text">600 рублей</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">Косынки из хлопка. Описание,состав,размеры указаны в объявлении
+                        </li>
+                    </ul>
+                    <div class="card-body">
+                        <a href="https://www.avito.ru/moskva/odezhda_obuv_aksessuary/vyazanaya_kosynka_7377077674?slocation=621540&context=H4sIAAAAAAAA_wE_AMD_YToyOntzOjEzOiJsb2NhbFByaW9yaXR5IjtiOjA7czoxOiJ4IjtzOjE2OiJQaFRrYWRHWjdHSGgzMldSIjt9RDrB-T8AAAA" class="btn btn-primary" target="_blank">Купить (переход на Авито)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="mt-5 py-4" style="background-color: #ff69b4; color: white;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">© EL - Вязаные изделия ручной работы</p>
+                    <p class="mb-0">Все права защищены 2025</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Подключение Bootstrap JS для работы карусели -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
