@@ -128,20 +128,15 @@
             }
         }
         
-        /* Стили для счетчика */
+        /* Стили для счетчика (скрыты) */
         .counter-container {
-            text-align: center;
-            margin: 20px 0;
-            padding: 10px;
-            background-color: rgba(255, 255, 255, 0.8);
-            border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: none;
         }
         
-        .counter-title {
-            color: #ff69b4;
-            font-weight: 600;
-            margin-bottom: 5px;
+        /* Выравнивание последней карточки влево */
+        .align-left {
+            margin-right: auto;
+            margin-left: 0;
         }
     </style>
 </head>
@@ -154,7 +149,7 @@
         </nav>
     </header>
 
-    <!-- Счетчик посещений -->
+    <!-- Счетчик посещений (скрыт) -->
     <div class="counter-container">
         <div class="counter-title">Посетителей на сайте:</div>
         <!-- LiveInternet counter -->
@@ -471,9 +466,9 @@
         </div>
         
         <!-- Третий ряд с новой карточкой -->
-        <div class="row justify-content-between">
+        <div class="row justify-content-start">
             <!-- Новая карточка 7 -->
-            <div class="col-lg-4 col-md-6 mb-4 mx-auto">
+            <div class="col-lg-4 col-md-6 mb-4 align-left">
                 <div class="card product-card h-100">
                     <div class="card-body">
                         <div id="productCarousel7" class="carousel slide" data-bs-ride="carousel">
@@ -529,6 +524,13 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <p class="mb-1" style="font-size: 1.1rem; font-weight: 500; letter-spacing: 0.5px; color: #000;">
-                    © EL - Вязаные изделия ручной работы
+                    © EL - Вязаные изделия ручной работы. Все права защищены 2025
                 </p>
-                <p class="mb-0" style="font-size: 0
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
